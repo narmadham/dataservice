@@ -1,4 +1,5 @@
 const http = require('http');
+const URL = require('url');
 const PORT = process.env.PORT || 5000;
 
 //Handle request
@@ -7,8 +8,8 @@ const requestHandler = (request, response) => {
         method,
         url
     } = request;
-
-    if (method === 'POST') {
+     var getUrl = URL.parse(url, true);
+    if (method === 'POST' && getUrl.path === '/') {
         let postdata = [];
 
         request.on('data', function(chunk) {
