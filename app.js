@@ -61,7 +61,7 @@ const getFilteredData = (requestData) => {
 
             var concatAddress = getAddressString(element.address);
             results.push({
-                concatAddress: concatAddress,
+                concataddress: concatAddress,
                 type: element.type,
                 workflow: element.workflow
             });
